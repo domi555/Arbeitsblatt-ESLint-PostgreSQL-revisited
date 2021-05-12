@@ -6,3 +6,21 @@ GET http://localhost:3000/cocktails/all?max=7.2
 ###
 DELETE http://localhost:3000/cocktails/Alice
 ###
+POST http://localhost:3000/cocktails
+Content-Type: application/json
+
+{
+    "cname": "Hit and Run",
+    "preis": 12.22,
+    "zubereitung": "eo ipso",
+    "kid": 1,
+    "zgid": 1,
+    "sgid": 1
+}
+###
+PATCH http://localhost:3000/cocktails/Cinderella
+Content-Type: application/json
+
+{
+    "preis": 12.22
+}
