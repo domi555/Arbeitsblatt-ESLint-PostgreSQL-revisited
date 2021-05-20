@@ -34,16 +34,16 @@ async function deleteCocktail(name) {
   const { rows } = await db.query('DELETE FROM cocktail WHERE cid = $1 RETURNING cname', [
     cocktail.rows[0].cid,
   ]);
-  if (rows.length == 0)
+  if (rows.length === 0) {
     return {
       data: `Cocktail ${name} not found!`,
       code: 404,
     };
-  else
-    return {
-      data: `Deleted ${name}`,
-      code: 200,
-    };
+  }
+  return {
+    data: `Deleted ${name}`,
+    code: 200,
+  };
 }
 
 async function addCocktail(params) {
@@ -68,4 +68,11 @@ async function updateCocktail(name, preis) {
   };
 }
 
-module.exports = { getAll, getZutaten, getSmallerThan, deleteCocktail, addCocktail, updateCocktail };
+module.exports = {
+  getAll,
+  getZutaten,
+  getSmallerThan,
+  deleteCocktail,
+  addCocktail,
+  updateCocktail,
+};

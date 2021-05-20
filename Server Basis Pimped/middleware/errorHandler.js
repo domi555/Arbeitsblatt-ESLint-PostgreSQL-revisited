@@ -1,4 +1,4 @@
-const errorHandler = (err, req, res, next) => {
+const errorHandler = (err, req, res) => {
   console.log(`Error => ${err.message}`.red);
   res.status(500).json({
     code: 500,
@@ -7,7 +7,7 @@ const errorHandler = (err, req, res, next) => {
 };
 
 const notFound = (req, res) => {
-  console.log(`Not Found: ${err.message}`.red);
+  console.log('Not Found'.red);
   res.status(500).json({
     code: 404,
     data: 'Not found',
